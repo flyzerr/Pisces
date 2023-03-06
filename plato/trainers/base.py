@@ -114,8 +114,8 @@ class Trainer(ABC):
         model_file = f"{model_dir}{model_name}_{self.client_id}_{Config().params['run_id']}.pth"
         accuracy_file = f"{model_dir}{model_name}_{self.client_id}_{Config().params['run_id']}.acc"
 
-        if os.path.exists(model_file):
-            os.remove(model_file)
+#         if os.path.exists(model_file):
+#             os.remove(model_file)
 
         if os.path.exists(accuracy_file):
             os.remove(accuracy_file)
