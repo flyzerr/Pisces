@@ -79,14 +79,14 @@ class Client(base.Client):
         single_class = (Config().data.num_classes == 1)
         self.datasource.trainset = LoadImagesAndLabels(
             Config().data.train_path,
-            self.image_size,
+            # self.image_size,  # 默认640
             Config().trainer.batch_size,
             augment=False,  # augment images
             hyp=None,  # augmentation hyperparameters
             rect=False,  # rectangular training
             cache_images=False,
             single_cls=single_class,
-            stride=int(self.grid_size),
+            # stride=int(self.grid_size),   # 默认32
             pad=0.0,
             image_weights=False,
             prefix=''
