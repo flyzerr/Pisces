@@ -75,7 +75,7 @@ class Client(base.Client):
                      self.datasource.num_train_examples())
 
         # Setting up the data sampler
-        logging.info("11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111 ", self.datasource)
+        logging.info("11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111 %s", type(self.datasource))
         self.sampler = samplers_registry.get(self.datasource, self.client_id)
 
         if hasattr(Config().trainer, 'use_mindspore'):
