@@ -66,10 +66,8 @@ class Client(base.Client):
         logging.info("[Client #%d] Loading its data source...", self.client_id)
 
         if self.datasource is None:
-            logging.info("11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111")
             self.datasource = datasources_registry.get(
                 client_id=self.client_id)
-        logging.info("22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222")
 
         self.data_loaded = True
 
@@ -77,6 +75,7 @@ class Client(base.Client):
                      self.datasource.num_train_examples())
 
         # Setting up the data sampler
+        logging.info("11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111 ", self.datasource)
         self.sampler = samplers_registry.get(self.datasource, self.client_id)
 
         if hasattr(Config().trainer, 'use_mindspore'):
