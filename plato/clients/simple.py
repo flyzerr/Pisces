@@ -73,6 +73,25 @@ class Client(base.Client):
 
         logging.info("[Client #%d] Dataset size: %s", self.client_id,
                      self.datasource.num_train_examples())
+        
+        ########################################################
+        from plato.datasources.yolov5.utils.dataloaders import LoadImagesAndLabels
+        single_class = (Config().data.num_classes == 1)
+        self.datasource.trainset = LoadImagesAndLabels(
+            Config().data.train_path,
+            self.image_size,
+            Config().trainer.batch_size,
+            augment=False,  # augment images
+            hyp=None,  # augmentation hyperparameters
+            rect=False,  # rectangular training
+            cache_images=False,
+            single_cls=single_class,
+            stride=int(self.grid_size),
+            pad=0.0,
+            image_weights=False,
+            prefix=''
+        )
+        ########################################################
 
         # Setting up the data sampler
         logging.info("11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111 %s", type(self.datasource))
