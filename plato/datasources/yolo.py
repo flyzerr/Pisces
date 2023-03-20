@@ -63,7 +63,10 @@ class DataSource(base.DataSource):
             for url in urls:
                 if not os.path.exists(_path + url.split('/')[-1]):
                     DataSource.download(url, _path)
-
+                    
+        ################################################
+        Config().params['grid_size'] = 2
+        ################################################
         assert 'grid_size' in Config().params
 
         self.grid_size = Config().params['grid_size']
