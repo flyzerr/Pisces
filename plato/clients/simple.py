@@ -51,6 +51,7 @@ class Client(base.Client):
 
     def configure(self) -> None:
         """Prepare this client for training."""
+        logging.info("*********************** simple.py Client.configure *********************")
         if self.trainer is None:
             self.trainer = trainers_registry.get(self.model)
         self.trainer.set_client_id(self.client_id)
