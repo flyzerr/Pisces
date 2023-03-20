@@ -18,7 +18,9 @@ import os
 
 import torch
 from plato.config import Config
-from yolov5.utils.datasets import LoadImagesAndLabels
+from yolov5 import utils
+# from yolov5.utils.datasets import LoadImagesAndLabels
+from yolov5.utils.dataloaders import LoadImagesAndLabels
 from yolov5.utils.general import check_img_size
 
 from plato.datasources import base
