@@ -7,11 +7,11 @@ COCO 2017 dataset, refer to https://www.kaggle.com/ultralytics/coco128.
 For more information about the COCO 2017 dataset, refer to http://cocodataset.org.
 """
 
-#####################################
-import os,sys
-parentdir=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))#跨文件引用
-sys.path.insert(0,parentdir)
-#####################################
+# #####################################
+# import os,sys
+# parentdir=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))#跨文件引用
+# sys.path.insert(0,parentdir)
+# #####################################
 
 import logging
 import os
