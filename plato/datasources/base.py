@@ -115,8 +115,8 @@ class DataSource:
         from plato.datasources.yolov5.utils.dataloaders import LoadImagesAndLabels
         if(isinstance(self.trainset, LoadImagesAndLabels)):
             # return ["fall", "not_fall"]
-            return ["0", "1"]
-            # return [0, 1] ######### ???
+            # return ["0", "1"]
+            return [0, 1] ######### ???
         ###################################################################
         return self.trainset.targets
 
