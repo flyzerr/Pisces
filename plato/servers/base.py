@@ -445,6 +445,7 @@ class Server:
                              or hasattr(Config().server.asynchronous, 'sirius')):
                     # in other words, default is unlimited
                     self.clients_per_round -= 1
+                    logging.info("-----------------------------------------------------------  %d", self.clients_per_round)
 
     async def send_in_chunks(self, data, sid, client_id) -> None:
         """ Sending a bytes object in fixed-sized chunks to the client. """
