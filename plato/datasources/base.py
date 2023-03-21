@@ -96,7 +96,7 @@ class DataSource:
         """ Obtains a list of class names in the dataset. """
         ###################################################################
         from plato.datasources.yolov5.utils.dataloaders import LoadImagesAndLabels
-        if(isinstance(self, LoadImagesAndLabels)):
+        if(isinstance(self.trainset, LoadImagesAndLabels)):
             # return ["0", "1"]
             return ["fall", "not_fall"]
             # return [0, 1] ######### ???
@@ -108,7 +108,7 @@ class DataSource:
         in the dataset. """
         ###################################################################
         from plato.datasources.yolov5.utils.dataloaders import LoadImagesAndLabels
-        if(isinstance(self, LoadImagesAndLabels)):
+        if(isinstance(self.trainset, LoadImagesAndLabels)):
             # return ["fall", "not_fall"]
             return ["0", "1"]
             # return [0, 1] ######### ???
