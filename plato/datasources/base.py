@@ -95,6 +95,8 @@ class DataSource:
     def classes(self):
         """ Obtains a list of class names in the dataset. """
         ###################################################################
+        if(self.trainset is None):
+            self.trainset = self.get_train_set()
         from plato.datasources.yolov5.utils.dataloaders import LoadImagesAndLabels
         if(isinstance(self.trainset, LoadImagesAndLabels)):
             # return ["0", "1"]
@@ -107,6 +109,8 @@ class DataSource:
         """ Obtains a list of targets (labels) for all the examples
         in the dataset. """
         ###################################################################
+        if(self.trainset is None):
+            self.trainset = self.get_train_set()
         print("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz %s", type(self.trainset))
         from plato.datasources.yolov5.utils.dataloaders import LoadImagesAndLabels
         if(isinstance(self.trainset, LoadImagesAndLabels)):
