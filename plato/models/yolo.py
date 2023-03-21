@@ -1,6 +1,8 @@
 """The YOLOV5 model for PyTorch."""
-from yolov5.models import yolo
-from yolov5.utils.torch_utils import time_synchronized
+# from yolov5.models import yolo
+# from yolov5.utils.torch_utils import time_synchronized
+from packages.yolov5.yolov5.models import yolo
+from packages.yolov5.yolov5.utils.torch_utils import time_synchronized
 
 from plato.config import Config
 
