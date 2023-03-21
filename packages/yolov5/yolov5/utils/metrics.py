@@ -7,7 +7,8 @@ import numpy as np
 import torch
 
 # from yolov5.utils import general
-import general
+# import general
+from . import general
 
 
 def fitness(x):
