@@ -14,10 +14,14 @@ from plato.trainers import basic
 from plato.utils import unary_encoding
 from torch.cuda import amp
 from tqdm import tqdm
-from yolov5.utils.general import (box_iou, check_dataset, one_cycle,
+# from yolov5.utils.general import (box_iou, check_dataset, one_cycle,
+#                                   non_max_suppression, scale_coords, xywh2xyxy)
+# from yolov5.utils.loss import ComputeLoss
+# from yolov5.utils.metrics import ap_per_class
+from plato.datasources.yolov5.utils.general import (box_iou, check_dataset, one_cycle,
                                   non_max_suppression, scale_coords, xywh2xyxy)
-from yolov5.utils.loss import ComputeLoss
-from yolov5.utils.metrics import ap_per_class
+from plato.datasources.yolov5.utils.loss import ComputeLoss
+from plato.datasources.yolov5.utils.metrics import ap_per_class
 
 
 class Trainer(basic.Trainer):
