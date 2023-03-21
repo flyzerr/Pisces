@@ -107,6 +107,7 @@ class DataSource:
         """ Obtains a list of targets (labels) for all the examples
         in the dataset. """
         ###################################################################
+        print("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz %s", type(self.trainset))
         from plato.datasources.yolov5.utils.dataloaders import LoadImagesAndLabels
         if(isinstance(self.trainset, LoadImagesAndLabels)):
             # return ["fall", "not_fall"]
