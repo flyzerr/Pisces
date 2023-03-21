@@ -12,10 +12,14 @@ import torch.nn as nn
 from PIL import Image
 from torch.cuda import amp
 
-from yolov5.utils.datasets import letterbox
-from yolov5.utils.general import non_max_suppression, make_divisible, scale_coords, increment_path, xyxy2xywh, save_one_box
-from yolov5.utils.plots import colors, plot_one_box
-from yolov5.utils.torch_utils import time_synchronized
+# from yolov5.utils.datasets import letterbox
+# from yolov5.utils.general import non_max_suppression, make_divisible, scale_coords, increment_path, xyxy2xywh, save_one_box
+# from yolov5.utils.plots import colors, plot_one_box
+# from yolov5.utils.torch_utils import time_synchronized
+from packages.yolov5.yolov5.utils.datasets import letterbox
+from packages.yolov5.yolov5.utils.general import non_max_suppression, make_divisible, scale_coords, increment_path, xyxy2xywh, save_one_box
+from packages.yolov5.yolov5.utils.plots import colors, plot_one_box
+from packages.yolov5.yolov5.utils.torch_utils import time_synchronized
 
 
 def autopad(k, p=None):  # kernel, padding
