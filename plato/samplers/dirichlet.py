@@ -66,4 +66,8 @@ class Sampler(base.Sampler):
             target_proportions = np.repeat(0, len(class_list))
             target_proportions[random.randint(0, len(class_list) - 1)] = 1
 
+        #######################################
+        print("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %s", type(target_list))
+        print(target_list)
+        #######################################
         self.sample_weights = target_proportions[target_list]
