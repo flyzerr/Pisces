@@ -16,7 +16,7 @@ class Sampler(base.Sampler):
     dataset, biased across labels according to the Dirichlet distribution."""
     def __init__(self, datasource, client_id):
         super().__init__()
-        logging.info("33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333 %s", type(datasource))
+        # logging.info("33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333 %s", type(datasource))
         self.datasource = datasource
         self.sample_weights = None
         self.client_id = client_id
