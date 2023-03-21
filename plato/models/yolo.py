@@ -80,4 +80,5 @@ class Model(yolo.Model):
             return Model(Config().trainer.model_config,
                          Config().data.num_classes)
         else:
-            return Model('yolov5s.yaml', Config().data.num_classes)
+            # return Model('yolov5s.yaml', Config().data.num_classes)
+            return Model('/home/ubuntu/Pisces/packages/yolov5/yolov5/models/Pisces/yolov5s.yaml', Config().data.num_classes)
