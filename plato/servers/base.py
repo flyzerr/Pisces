@@ -552,6 +552,7 @@ class Server:
 
     async def client_payload_done(self, sid, client_id, object_key):
         """ Upon receiving all the payload from a client, eithe via S3 or socket.io. """
+        logging.info("11111111111111111111111111111111111111111111111111111111111111111111111111")
         if object_key is None:
             assert self.client_payload[sid] is not None
 
@@ -645,6 +646,7 @@ class Server:
                     or hasattr(Config().server.asynchronous, 'sirius'):
                 # in other words, default is unlimited
                 self.clients_per_round += 1
+                logging.info("++++++++++++++++++++++++++++++++++++++++++++++++++++++++ %d", self.clients_per_round)
 
         elif len(self.updates) > 0:
             if hasattr(Config().server, "overselection"):
