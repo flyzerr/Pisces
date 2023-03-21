@@ -244,8 +244,10 @@ class ClientManager:
         if self.client_selector:
             result = self.client_selector.select_participant(
                 num_of_clients=sample_size, feasible_clients=clients_pool)
+            logging.info("**11111111111111111111111111111111111111111111111111111111111111111111111111111111111 %d", len(result))
         else:
             result = random.sample(clients_pool, sample_size)
+            logging.info("##22222222222222222222222222222222222222222222222222222222222222222222222222222222222 %d", len(result))
 
         return result
 
