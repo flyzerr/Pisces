@@ -94,8 +94,8 @@ class Client(base.Client):
         ########################################################
 
         # Setting up the data sampler
-        logging.info("11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111 %s", type(self.datasource))
-        logging.info("wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww %s", type(self.datasource.trainset))
+        # logging.info("11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111 %s", type(self.datasource))
+        # logging.info("wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww %s", type(self.datasource.trainset))
         self.sampler = samplers_registry.get(self.datasource, self.client_id)
 
         if hasattr(Config().trainer, 'use_mindspore'):

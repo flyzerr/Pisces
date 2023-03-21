@@ -111,7 +111,7 @@ class DataSource:
         ###################################################################
         if(self.trainset is None):
             self.trainset = self.get_train_set()
-        print("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz %s", type(self.trainset))
+        # print("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz %s", type(self.trainset))
         from plato.datasources.yolov5.utils.dataloaders import LoadImagesAndLabels
         if(isinstance(self.trainset, LoadImagesAndLabels)):
             # return ["fall", "not_fall"]

@@ -52,7 +52,7 @@ class Sampler(base.Sampler):
 
     def update_concentration(self, concentration):
         # The list of labels (targets) for all the examples
-        logging.info("44444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444 %s", type(self.datasource))
+        # logging.info("44444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444 %s", type(self.datasource))
         target_list = self.datasource.targets()
         class_list = self.datasource.classes()
 
