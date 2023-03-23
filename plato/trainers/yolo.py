@@ -358,7 +358,7 @@ class Trainer(basic.Trainer):
 
         # Print results
         pf = '%20s' + '%12.3g' * 6  # print format
-        print(pf % ('all', seen, nt.sum(), mp, mr, map50, map))
+        # print(pf % ('all', seen, nt.sum(), mp, mr, map50, map))   ############################################## 报错: UnboundLocalError: local variable 'mr' referenced before assignment
 
         return map50
 
