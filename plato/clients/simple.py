@@ -131,7 +131,7 @@ class Client(base.Client):
         try:
             training_time = self.trainer.train(self.trainset, self.sampler)
         except ValueError as e:
-            logging.info("ValueError: %s", e)
+            logging.info("ValueError: %s", e)   ################## [simple.py:134]: ValueError: Training on client 2 failed ([Errno 2] No such file or directory: '/home/ubuntu/Pisces/experiments/socc22_ae/my_yml/20230324-000425/yolov5_2_4815.pth').
             await self.sio.disconnect()
 
         # Extract model weights and biases
