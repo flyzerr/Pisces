@@ -157,7 +157,9 @@ class Server(base.Server):
                 }
             logging.info("[Server #%d] New client with id #%d arrived.",
                          os.getpid(), client_id)
-
+            
+            logging.info("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! %d", sid)
+            logging.info(dict.items())
             trainset_size = data['trainset_size']
             # should not be used with customized latency
             if hasattr(Config().data, 'partition_size_update') and not \
