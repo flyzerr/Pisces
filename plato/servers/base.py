@@ -552,7 +552,7 @@ class Server:
 
     async def client_payload_done(self, sid, client_id, object_key):
         """ Upon receiving all the payload from a client, eithe via S3 or socket.io. """
-        logging.info("11111111111111111111111111111111111111111111111111111111111111111111111111")
+        logging.info("11111111111111111111111111111111111111111111111111111111111111111111111111 %s %d %d %s", type(self), sid, client_id, object_key)
         if object_key is None:
             assert self.client_payload[sid] is not None
 
