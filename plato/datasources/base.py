@@ -139,6 +139,7 @@ class DataSource:
             ret = []
             for i in self.trainset.labels:
                 ret.append(int(i[0][0]))
+            ret = torch.IntTensor(ret)
             print(type(ret))
             print(ret)
             return ret
