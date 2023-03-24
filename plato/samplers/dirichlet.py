@@ -69,6 +69,8 @@ class Sampler(base.Sampler):
         #######################################
         print("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^", type(target_list))
         torch.set_printoptions(threshold=np.inf)    # 完整打印torch.Tensor类型的变量,而不是中间显示一些省略号
+        target_list_size = target_list.numel()
+        print("target_list_size: ", target_list_size)
         print(target_list)
         #######################################
         self.sample_weights = target_proportions[target_list]
