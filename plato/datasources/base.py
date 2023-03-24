@@ -129,13 +129,13 @@ class DataSource:
             ])
             print(type(tmp))
             print(tmp)
-            return torch.IntTensor([
-                0,
-                0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                0, 0, 0, 0, 0, 0, 0, 1, 1, 1,
-                1, 1, 1, 1, 1, 1, 1, 1, 0, 0,
-                0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            ])
+            # return torch.IntTensor([
+            #     0,
+            #     0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            #     0, 0, 0, 0, 0, 0, 0, 1, 1, 1,
+            #     1, 1, 1, 1, 1, 1, 1, 1, 0, 0,
+            #     0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            # ])
 
             # print(type(self.trainset.labels))   
             # print(self.trainset.labels) # 有类别有位置 [array([[0, 0.45156, 0.675, 0.37813, 0.35833]], dtype=float32), array([[0, 0.45312, 0.69583, 0.38125, 0.35]], dtype=float32) ....
@@ -144,14 +144,15 @@ class DataSource:
             # print(type(self.trainset.labels[:, 0]))
             # print(self.trainset.labels[:, 0])
             # return self.trainset.labels[:, 0]
-        
-            # ret = []
-            # for i in self.trainset.labels:
-            #     ret.append(int(i[0][0]))
-            # ret = torch.IntTensor(ret)
-            # print(type(ret))
-            # print(ret)
-            # return ret
+
+            print("@@@@@@")        
+            ret = []
+            for i in self.trainset.labels:
+                ret.append(int(i[0][0]))
+            ret = torch.IntTensor(ret)
+            print(type(ret))
+            print(ret)
+            return ret
         ###################################################################
         return self.trainset.targets
 
