@@ -273,6 +273,7 @@ class Trainer(base.Trainer):
                 and Config().server.client_selection.name == 'oort' or \
                 hasattr(Config().server, 'asynchronous') and \
                 hasattr(Config().server.asynchronous, 'sirius'):
+            epoch_train_loss = 1e-4 ######################## 瞎猜的,否则报错: UnboundLocalError: local variable 'epoch_train_loss' referenced before assignment
             self.moving_loss_norm = np.sqrt(epoch_train_loss)
 
         if 'max_concurrency' in config:
