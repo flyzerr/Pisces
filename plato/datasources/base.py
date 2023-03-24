@@ -120,13 +120,16 @@ class DataSource:
             # return [0, 1] ######### ???
             print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
             # return torch.IntTensor([0, 1]) ######### ???
-            return torch.IntTensor([
-                0,
-                0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                0, 0, 0, 0, 0, 0, 0, 1, 1, 1,
-                1, 1, 1, 1, 1, 1, 1, 1, 0, 0,
-                0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            ])
+            # return torch.IntTensor([
+            #     0,
+            #     0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            #     0, 0, 0, 0, 0, 0, 0, 1, 1, 1,
+            #     1, 1, 1, 1, 1, 1, 1, 1, 0, 0,
+            #     0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            # ])
+            print(type(self.trainset.labels))
+            print(self.trainset.labels)
+            return self.trainset.labels
         ###################################################################
         return self.trainset.targets
 

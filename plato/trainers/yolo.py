@@ -363,7 +363,7 @@ class Trainer(basic.Trainer):
         map = 0.0
         ############################################## 
         # 不加上面这两行的话,会报mr和map为初始化. UnboundLocalError: local variable 'mr' referenced before assignment
-        print(pf % ('all', seen, nt.sum(), mp, mr, map50, map))
+        print(pf % ('all', seen, nt.sum(), mp, mr, map50, map)) # map50应该就是result.csv中的accuracy
 
         return map50
 
