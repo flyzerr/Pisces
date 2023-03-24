@@ -127,9 +127,14 @@ class DataSource:
             #     1, 1, 1, 1, 1, 1, 1, 1, 0, 0,
             #     0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             # ])
-            print(type(self.trainset.labels))
-            print(self.trainset.labels)
-            return self.trainset.labels
+
+            # print(type(self.trainset.labels))   
+            # print(self.trainset.labels) # 有类别有位置 [array([[0, 0.45156, 0.675, 0.37813, 0.35833]], dtype=float32), array([[0, 0.45312, 0.69583, 0.38125, 0.35]], dtype=float32) ....
+            # return self.trainset.labels
+
+            print(type(self.trainset.labels[:, 0]))
+            print(self.trainset.labels[:, 0])
+            return self.trainset.labels[:, 0]
         ###################################################################
         return self.trainset.targets
 
