@@ -65,7 +65,8 @@ class DataSource(base.DataSource):
                     DataSource.download(url, _path)
                     
         ################################################
-        Config().params['grid_size'] = 2
+        # Config().params['grid_size'] = 2
+        Config().params['grid_size'] = 32   # 好像默认是32, 好像说image_size得是grid_size的整数倍
         ################################################
         assert 'grid_size' in Config().params
 

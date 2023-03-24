@@ -67,7 +67,7 @@ class Sampler(base.Sampler):
             target_proportions[random.randint(0, len(class_list) - 1)] = 1
 
         #######################################
-        print("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ %s", type(target_list))
+        print("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^", type(target_list))
         torch.set_printoptions(threshold=np.inf)    # 完整打印torch.Tensor类型的变量,而不是中间显示一些省略号
         print(target_list)
         #######################################
