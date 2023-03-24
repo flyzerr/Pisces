@@ -118,17 +118,17 @@ class DataSource:
             # return ["fall", "not_fall"]
             # return ["0", "1"]
             # return [0, 1] ######### ???
-            print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+            # print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
             # return torch.IntTensor([0, 1]) ######### ???
-            tmp = torch.IntTensor([
-                0,
-                0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                0, 0, 0, 0, 0, 0, 0, 1, 1, 1,
-                1, 1, 1, 1, 1, 1, 1, 1, 0, 0,
-                0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            ])
-            print(type(tmp))
-            print(tmp)
+            # tmp = torch.IntTensor([
+            #     0,
+            #     0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            #     0, 0, 0, 0, 0, 0, 0, 1, 1, 1,
+            #     1, 1, 1, 1, 1, 1, 1, 1, 0, 0,
+            #     0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            # ])
+            # print(type(tmp))
+            # print(tmp)
             # return torch.IntTensor([
             #     0,
             #     0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -145,7 +145,7 @@ class DataSource:
             # print(self.trainset.labels[:, 0])
             # return self.trainset.labels[:, 0]
 
-            print("@@@@@@")        
+            # print("@@@@@@")        
             ret = []
             for i in self.trainset.labels:
                 ret.append(int(i[0][0]))
