@@ -133,6 +133,7 @@ class Server(base.Server):
 
     def load_trainer(self):
         """Setting up the global model to be trained via federated learning."""
+        self.model = Config().server.model_path     # /home/ubuntu/Pisces/plato/models/pretrained_model/yolov5s.pt  # 猜的
         logging.info("7777777777777777777777777777777777777777777777777777 %s", type(self.model))   # <class 'NoneType'>
         if self.trainer is None:
             self.trainer = trainers_registry.get(model=self.model)
