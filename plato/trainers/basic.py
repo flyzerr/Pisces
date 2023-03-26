@@ -309,7 +309,7 @@ class Trainer(base.Trainer):
         float: Elapsed time during training.
         """
         if(self.client_id == 0):
-            logging.info("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+            logging.info("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~") # 没有
         config = Config().trainer._asdict()
         config['run_id'] = Config().params['run_id']
 
@@ -549,6 +549,10 @@ class Trainer(base.Trainer):
                     _, predicted = torch.max(outputs.data, 1)
                     total += labels.size(0)
                     correct += (predicted == labels).sum().item()
+                    logging.info("11111111111111111111111111111111111 %s", type(predicted))
+                    print("11111111111111111111111111111111111", predicted)
+                    logging.info("22222222222222222222222222222222222 %s", type(labels))
+                    print("22222222222222222222222222222222222", labels)
 
         if mode == "async":
             del model_to_test
