@@ -82,3 +82,5 @@ class Model(yolo.Model):
         else:
             # return Model('yolov5s.yaml', Config().data.num_classes)
             return Model('/home/ubuntu/Pisces/packages/yolov5/yolov5/models/yolov5s.yaml', Config().data.num_classes)
+            ######## 下面是自己猜的，使用预训练模型
+            # return self.model.load_state_dict(torch.load(model_path))

@@ -72,7 +72,7 @@ class Trainer(base.Trainer):
         assert self.client_id == 0
         return torch.zeros(shape)
 
-    def save_model(self, filename=None):
+    def save_model(self, filename=None):    # 客户端client保存模型，server保存全局模型好像也是在这里
         """Saving the model to a file."""
         model_name = Config().trainer.model_name
         model_dir = Config().result_dir
@@ -95,7 +95,7 @@ class Trainer(base.Trainer):
             logging.info("[Client #%d] Model saved to %s.", self.client_id,
                          model_path)
 
-    def load_model(self, filename=None):
+    def load_model(self, filename=None):    # load加载模型
         """Loading pre-trained model weights from a file."""
         model_dir = Config().result_dir
         model_name = Config().trainer.model_name
