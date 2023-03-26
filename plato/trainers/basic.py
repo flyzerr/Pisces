@@ -308,6 +308,8 @@ class Trainer(base.Trainer):
         bool: Whether training was successfully completed.
         float: Elapsed time during training.
         """
+        if(self.client_id == 0):
+            logging.info("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
         config = Config().trainer._asdict()
         config['run_id'] = Config().params['run_id']
 
