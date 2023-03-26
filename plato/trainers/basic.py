@@ -366,6 +366,7 @@ class Trainer(base.Trainer):
                 filename = f"{model_name}_{self.client_id}_{Config().params['run_id']}.pt"
 
                 try:
+                    logging.info("666666666666666666666666666666666666666666666666666666666666666666 ", self.client_id, model_name, filename)
                     self.load_model(filename)
                 except OSError as error:  # the model file is not found, training failed
                     if hasattr(Config().trainer, 'max_concurrency'):
