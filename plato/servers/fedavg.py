@@ -133,7 +133,7 @@ class Server(base.Server):
 
     def load_trainer(self):
         """Setting up the global model to be trained via federated learning."""
-        logging("7777777777777777777777777777777777777777777777777777 %s", self.model)
+        logging("7777777777777777777777777777777777777777777777777777", self.model)
         if self.trainer is None:
             self.trainer = trainers_registry.get(model=self.model)
 
