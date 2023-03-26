@@ -216,7 +216,7 @@ class Trainer(basic.Trainer):
 
             lr_schedule.step()
 
-    def test_model(self, config, testset):  # pylint: disable=unused-argument
+    def test_model(self, config, testset):  # pylint: disable=unused-argument   # 测试server全局模型精度，可能client端模型精度也是在这测试
         """The testing loop for YOLOv5.
 
         Arguments:

@@ -503,7 +503,7 @@ class Trainer(base.Trainer):
 
         return accuracy
 
-    def server_test(self, testset, mode="sync"):
+    def server_test(self, testset, mode="sync"):    # 测试全局模型精度
         """Testing the model on the server using the provided test dataset.
 
         Arguments:

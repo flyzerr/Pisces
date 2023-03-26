@@ -546,7 +546,7 @@ class Server:
             else:
                 logging.info(
                     '[Server #{:d}] Global model accuracy: {:.2f}%\n'.format(
-                        os.getpid(), 100 * self.accuracy))
+                        os.getpid(), 100 * self.accuracy))      # 计算server全局模型精度
 
         if hasattr(Config().trainer, 'use_wandb'):
             wandb.log({"accuracy": self.accuracy})
