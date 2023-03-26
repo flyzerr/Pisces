@@ -111,7 +111,8 @@ class Trainer(ABC):
 
         model_name = Config().trainer.model_name
         model_dir = Config().result_dir
-        model_file = f"{model_dir}{model_name}_{self.client_id}_{Config().params['run_id']}.pth"
+        # model_file = f"{model_dir}{model_name}_{self.client_id}_{Config().params['run_id']}.pth"
+        model_file = f"{model_dir}{model_name}_{self.client_id}_{Config().params['run_id']}.pt"
         accuracy_file = f"{model_dir}{model_name}_{self.client_id}_{Config().params['run_id']}.acc"
 
 #         if os.path.exists(model_file):

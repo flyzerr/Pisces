@@ -83,7 +83,8 @@ class Trainer(base.Trainer):
         if filename is not None:
             model_path = f'{model_dir}{filename}'
         else:
-            model_path = f'{model_dir}{model_name}.pth'
+            # model_path = f'{model_dir}{model_name}.pth'
+            model_path = f'{model_dir}{model_name}.pt'
 
         torch.save(self.model.state_dict(), model_path)
 
@@ -102,7 +103,8 @@ class Trainer(base.Trainer):
         if filename is not None:
             model_path = f'{model_dir}{filename}'
         else:
-            model_path = f'{model_dir}{model_name}.pth'
+            # model_path = f'{model_dir}{model_name}.pth'
+            model_path = f'{model_dir}{model_name}.pt'
 
         if self.client_id == 0:
             logging.info("[Server #%d] Loading a model from %s.", os.getpid(),
@@ -279,7 +281,8 @@ class Trainer(base.Trainer):
         if 'max_concurrency' in config:
             self.model.cpu()
             model_type = config['model_name']
-            filename = f"{model_type}_{self.client_id}_{config['run_id']}.pth"
+            # filename = f"{model_type}_{self.client_id}_{config['run_id']}.pth"
+            filename = f"{model_type}_{self.client_id}_{config['run_id']}.pt"
             self.save_model(filename)
 
             if hasattr(Config().server, 'client_selection') \
@@ -359,7 +362,8 @@ class Trainer(base.Trainer):
                 )
 
                 model_name = Config().trainer.model_name
-                filename = f"{model_name}_{self.client_id}_{Config().params['run_id']}.pth"
+                # filename = f"{model_name}_{self.client_id}_{Config().params['run_id']}.pth"
+                filename = f"{model_name}_{self.client_id}_{Config().params['run_id']}.pt"
 
                 try:
                     self.load_model(filename)

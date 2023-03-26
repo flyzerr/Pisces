@@ -147,6 +147,7 @@ pretrained/
 wandb/
 logs/
 *.pth
+*.pt
 
 # macOS
 .DS_Store
