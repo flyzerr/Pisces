@@ -431,6 +431,7 @@ class Server:
                                     room=sid)
 
                 payload = self.algorithm.extract_weights()
+                logging.info("333333333333333333333333333333333333333333333333333333 %s", type(payload))
                 payload = self.customize_server_payload(payload)
 
                 # Sending the server payload to the client

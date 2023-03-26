@@ -549,7 +549,7 @@ class Trainer(base.Trainer):
                     _, predicted = torch.max(outputs.data, 1)
                     total += labels.size(0)
                     correct += (predicted == labels).sum().item()
-                    logging.info("11111111111111111111111111111111111 %s", type(predicted))
+                    logging.info("11111111111111111111111111111111111 %s", type(predicted)) # 没被执行
                     print("11111111111111111111111111111111111", predicted)
                     logging.info("22222222222222222222222222222222222 %s", type(labels))
                     print("22222222222222222222222222222222222", labels)
