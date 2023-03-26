@@ -430,15 +430,14 @@ class Server:
                                     {'response': server_response},
                                     room=sid)
 
-                # payload = self.algorithm.extract_weights()
+                payload = self.algorithm.extract_weights()
                 ########################################### 下面是自己猜的
-                model_path = "/home/ubuntu/Pisces/plato/models/pretrained_model/best.pt"
+                # model_path = "/home/ubuntu/Pisces/plato/models/pretrained_model/best.pt"
                 # payload = self.model.load_state_dict(torch.load(model_path))
-                payload = torch.load(model_path)
+                # payload = torch.load(model_path)
+                # logging.info("333333333333333333333333333333333333333333333333333333 %s", type(payload))
+                # print("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq ", payload)
 
-
-                logging.info("333333333333333333333333333333333333333333333333333333 %s", type(payload))
-                print("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq ", payload)
                 payload = self.customize_server_payload(payload)
 
                 # Sending the server payload to the client

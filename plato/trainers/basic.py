@@ -72,7 +72,7 @@ class Trainer(base.Trainer):
         assert self.client_id == 0
         return torch.zeros(shape)
 
-    def save_model(self, filename=None):    # 客户端client保存模型，server保存全局模型好像也是在这里
+    def save_model(self, filename=None):    # 客户端client保存模型，server保存全局模型好像也是在这里。但是server好像只是最后调用了一次这个保存模型
         """Saving the model to a file."""
         model_name = Config().trainer.model_name
         model_dir = Config().result_dir
@@ -95,7 +95,7 @@ class Trainer(base.Trainer):
             logging.info("[Client #%d] Model saved to %s.", self.client_id,
                          model_path)
 
-    def load_model(self, filename=None):    # load加载模型
+    def load_model(self, filename=None):    # load加载模型，作者写的代码好像是客户端和服务端都使用这个加载模型，但实际上服务端根本没调用过这个加载模型
         """Loading pre-trained model weights from a file."""
         model_dir = Config().result_dir
         model_name = Config().trainer.model_name
@@ -105,6 +105,9 @@ class Trainer(base.Trainer):
         else:
             # model_path = f'{model_dir}{model_name}.pth'
             model_path = f'{model_dir}{model_name}.pt'
+
+        ############ 测试一下，试试：
+        model_path = "/home/ubuntu/Pisces/plato/models/pretrained_model/best.pt"
 
         if self.client_id == 0:
             logging.info("[Server #%d] Loading a model from %s.", os.getpid(),
