@@ -383,6 +383,10 @@ class Trainer(basic.Trainer):
         return img
 
     def convert(self, size, box):
+        print("#######################", size, box)
+        print("rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr")
+        import logging
+        logging.info("tttttttttttttttttttttttttttttttttttttttttttt")
         """The convert for YOLOv5.
               Arguments:
                   size: Input feature size(w,h)
