@@ -342,6 +342,11 @@ class Trainer(basic.Trainer):
                 stats.append(
                     (correct.cpu(), pred[:, 4].cpu(), pred[:, 5].cpu(), tcls))
 
+        mr = 0.0    
+        map = 0.0
+        ############################################## 
+        # 不加上面这两行的话,下面输出的时候会报mr和map未初始化. UnboundLocalError: local variable 'mr' referenced before assignment
+
         # Compute statistics
         stats = [np.concatenate(x, 0) for x in zip(*stats)]  # to numpy
         if len(stats) and stats[0].any():
@@ -359,10 +364,6 @@ class Trainer(basic.Trainer):
         # Print results
         pf = '%20s' + '%12.3g' * 6  # print format
         
-        mr = 0.0    
-        map = 0.0
-        ############################################## 
-        # 不加上面这两行的话,会报mr和map为初始化. UnboundLocalError: local variable 'mr' referenced before assignment
         print(pf % ('all', seen, nt.sum(), mp, mr, map50, map)) # map50应该就是result.csv中的accuracy
 
         return map50
@@ -382,7 +383,7 @@ class Trainer(basic.Trainer):
                 box[3]] = label[:, :, box[0]:box[2], box[1]:box[3]]
         return img
 
-    def convert(self, size, box):
+    def convert(self, size, box):   # 这个函数好像从没调用过
         print("#######################", size, box)
         print("rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr")
         import logging

@@ -420,11 +420,14 @@ class Trainer(base.Trainer):
         """
         self.model.to(self.device)
         self.model.eval()
+        
+        print("a11111111111111111111111111111111111 ", type(config), config)
 
         try:
             custom_test = getattr(self, "test_model", None)
 
             if callable(custom_test):
+                print("a222222222222222222222222222222 ", type(custom_test), custom_test)
                 accuracy = self.test_model(config, testset)
             else:
                 test_loader = torch.utils.data.DataLoader(
