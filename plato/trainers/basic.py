@@ -107,7 +107,7 @@ class Trainer(base.Trainer):
             model_path = f'{model_dir}{model_name}.pt'
 
         ############ 测试一下，试试：
-        model_path = "/home/ubuntu/Pisces/plato/models/pretrained_model/best.pt"
+        # model_path = "/home/ubuntu/Pisces/plato/models/pretrained_model/best.pt"
 
         if self.client_id == 0:
             logging.info("[Server #%d] Loading a model from %s.", os.getpid(),

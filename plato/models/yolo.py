@@ -81,6 +81,25 @@ class Model(yolo.Model):
                          Config().data.num_classes)
         else:
             # return Model('yolov5s.yaml', Config().data.num_classes)
-            return Model('/home/ubuntu/Pisces/packages/yolov5/yolov5/models/yolov5s.yaml', Config().data.num_classes)
+            # return Model('/home/ubuntu/Pisces/packages/yolov5/yolov5/models/yolov5s.yaml', Config().data.num_classes)
             ######## 下面是自己猜的，使用预训练模型
             # return self.model.load_state_dict(torch.load(model_path))
+            # model = Model('/home/ubuntu/Pisces/packages/yolov5/yolov5/models/yolov5s.yaml', Config().data.num_classes)
+            # import torch
+            # model=torch.load(my_model.pth)
+
+            import torch
+            ret_model = Model('/home/ubuntu/Pisces/packages/yolov5/yolov5/models/yolov5s.yaml', Config().data.num_classes)
+            best_model_path = "/home/ubuntu/Pisces/plato/models/pretrained_model/best.pt"
+            best_model = torch.load(best_model_path)
+            best_model_parameters = best_model.state_dict()
+            ret_model.load_state_dict(best_model_parameters)
+            return ret_model
+
+            # import torch
+            # import torch.nn as nn
+            # l = nn.Linear(3, 5) # 为什么是3，5
+            # w = list(l.parameters())
+            # model = Model('/home/ubuntu/Pisces/packages/yolov5/yolov5/models/yolov5s.yaml', Config().data.num_classes)
+            # model.load_state_dict(w)
+            # return model
