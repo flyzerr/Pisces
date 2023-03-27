@@ -421,13 +421,13 @@ class Trainer(base.Trainer):
         self.model.to(self.device)
         self.model.eval()
         
-        print("a11111111111111111111111111111111111 ", type(config), config)
+        logging.info("a3333333333333333333333333 %s", type(config))
 
         try:
             custom_test = getattr(self, "test_model", None)
 
             if callable(custom_test):
-                print("a222222222222222222222222222222 ", type(custom_test), custom_test)
+                logging.info("a444444444444444444444444 ", type(custom_test))
                 accuracy = self.test_model(config, testset)
             else:
                 test_loader = torch.utils.data.DataLoader(
@@ -481,6 +481,8 @@ class Trainer(base.Trainer):
         config = Config().trainer._asdict()
         config['run_id'] = Config().params['run_id']
 
+        logging.info("a111111111111111111111111111 %s %s", type(config), type(config['run_id']))
+
         if hasattr(Config().trainer, 'max_concurrency'):
             self.start_training()
 
@@ -518,6 +520,8 @@ class Trainer(base.Trainer):
         config = Config().trainer._asdict()
         config['run_id'] = Config().params['run_id']
 
+        logging.info("a222222222222222222222222 %s %s", type(config), type(config['run_id']))
+
         # in case that model is changed by aggregated
         model_to_test = None
         if mode == "async":
@@ -531,6 +535,7 @@ class Trainer(base.Trainer):
         custom_test = getattr(self, "test_model", None)
 
         if callable(custom_test):
+            logging.info("aaaaa222222222222222222222222222222")
             return self.test_model(config, testset)
 
         test_loader = torch.utils.data.DataLoader(
