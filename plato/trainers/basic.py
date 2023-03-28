@@ -410,7 +410,7 @@ class Trainer(base.Trainer):
     def reset_async_training_status(self) -> None:
         self.train_proc = None
 
-    def test_process(self, config, testset):    # 没被执行
+    def test_process(self, config, testset):    # 不管是yolo还是mnist,都没被执行
         """The testing loop, run in a separate process with a new CUDA context,
         so that CUDA memory can be released after the training completes.
 
@@ -472,7 +472,7 @@ class Trainer(base.Trainer):
         else:
             return accuracy
 
-    def test(self, testset) -> float:   # 没被执行
+    def test(self, testset) -> float:   # 不管是yolo还是mnist,都没被执行
         """Testing the model using the provided test dataset.
 
         Arguments:
@@ -481,7 +481,7 @@ class Trainer(base.Trainer):
         config = Config().trainer._asdict()
         config['run_id'] = Config().params['run_id']
 
-        logging.info("a111111111111111111111111111 %s %s", type(config), type(config['run_id']))
+        # logging.info("a111111111111111111111111111 %s %s", type(config), type(config['run_id']))
 
         if hasattr(Config().trainer, 'max_concurrency'):
             self.start_training()
@@ -517,10 +517,10 @@ class Trainer(base.Trainer):
         Arguments:
         testset: The test dataset.
         """
-        config = Config().trainer._asdict()
-        config['run_id'] = Config().params['run_id']
+        config = Config().trainer._asdict() # type是dict
+        config['run_id'] = Config().params['run_id']    # type是int
 
-        logging.info("a222222222222222222222222 %s %s", type(config), type(config['run_id']))
+        # logging.info("a222222222222222222222222 %s %s", type(config), type(config['run_id']))
 
         # in case that model is changed by aggregated
         model_to_test = None
@@ -534,9 +534,9 @@ class Trainer(base.Trainer):
 
         custom_test = getattr(self, "test_model", None)
 
-        if callable(custom_test):   # 执行的是这个
-            logging.info("aaaaa222222222222222222222222222222")
-            return self.test_model(config, testset)
+        if callable(custom_test):   # 使用yolo数据集的时候,执行的是这个
+            # logging.info("aaaaa222222222222222222222222222222")
+            return self.test_model(config, testset) # 这个test_model就是 plato/trainers/yolo.py中的test_model
 
         test_loader = torch.utils.data.DataLoader(
             testset, batch_size=config['batch_size'], shuffle=False)
@@ -560,10 +560,11 @@ class Trainer(base.Trainer):
                     _, predicted = torch.max(outputs.data, 1)
                     total += labels.size(0)
                     correct += (predicted == labels).sum().item()
-                    logging.info("11111111111111111111111111111111111 %s", type(predicted)) # 没被执行
-                    print("11111111111111111111111111111111111", predicted)
-                    logging.info("22222222222222222222222222222222222 %s", type(labels))
-                    print("22222222222222222222222222222222222", labels)
+                    # 执行mnist数据集的时候会执行到这,但是执行yolo数据集的时候这里从未执行过
+                    # logging.info("11111111111111111111111111111111111 %s", type(predicted)) # 没被执行
+                    # print("11111111111111111111111111111111111", predicted)
+                    # logging.info("22222222222222222222222222222222222 %s", type(labels))
+                    # print("22222222222222222222222222222222222", labels)
 
         if mode == "async":
             del model_to_test
