@@ -410,7 +410,7 @@ class Trainer(base.Trainer):
     def reset_async_training_status(self) -> None:
         self.train_proc = None
 
-    def test_process(self, config, testset):
+    def test_process(self, config, testset):    # 没被执行
         """The testing loop, run in a separate process with a new CUDA context,
         so that CUDA memory can be released after the training completes.
 
@@ -472,7 +472,7 @@ class Trainer(base.Trainer):
         else:
             return accuracy
 
-    def test(self, testset) -> float:
+    def test(self, testset) -> float:   # 没被执行
         """Testing the model using the provided test dataset.
 
         Arguments:
@@ -534,7 +534,7 @@ class Trainer(base.Trainer):
 
         custom_test = getattr(self, "test_model", None)
 
-        if callable(custom_test):
+        if callable(custom_test):   # 执行的是这个
             logging.info("aaaaa222222222222222222222222222222")
             return self.test_model(config, testset)
 
