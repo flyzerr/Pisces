@@ -17,7 +17,7 @@ EC2_LAUNCH_RESULT=${WORKING_DIR}'/ec2_launch_result.json'
 
 # Please change this to your forked repo for ease of your own debugging
 GITHUB_REPO='git@github.com:SamuelGong/Pisces.git'
-REPO_BRANCH='main'
+REPO_BRANCH='main'  #
 
 case "$1" in
     install)
