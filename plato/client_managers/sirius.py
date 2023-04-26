@@ -307,6 +307,7 @@ class ClientManager(base.ClientManager):
                                            * (1 - num_to_select / self.client_per_round)
                     # speed_penalty = (1. / last_response_latency) ** speed_penalty_factor
                     speed_penalty = 1. / last_response_latency
+                    logging.info(f"111111111111111111111111111111111111111111111111111111111 {speed_penalty} {last_response_latency}")
                     # 20230426 ###########################################################################
                     debug_dict[client_id].update({
                         "resp_lat": round(last_response_latency, 4),
