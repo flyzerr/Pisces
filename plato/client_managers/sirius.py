@@ -316,7 +316,12 @@ class ClientManager(base.ClientManager):
                     # logging.info(f"111111111111111111111111111111111111111111111111111111111 pingfang {speed_penalty} {last_response_latency}")
                     # # 20230427 ###########################################################################
 
-                    mi_04271940 = 4
+                    # mi_04271940 = 4
+                    # speed_penalty = (1. / last_response_latency) ** mi_04271940
+                    # logging.info(f"111111111111111111111111111111111111111111111111111111111 pingfang {speed_penalty} {last_response_latency}")
+                    # # 20230428 ###########################################################################
+
+                    mi_04271940 = 8
                     speed_penalty = (1. / last_response_latency) ** mi_04271940
                     logging.info(f"111111111111111111111111111111111111111111111111111111111 pingfang {speed_penalty} {last_response_latency}")
                     # 20230428 ###########################################################################
