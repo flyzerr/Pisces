@@ -311,10 +311,15 @@ class ClientManager(base.ClientManager):
                     # logging.info(f"111111111111111111111111111111111111111111111111111111111  {speed_penalty} {last_response_latency}")
                     # 20230426 ###########################################################################
                     
-                    mi_04271940 = 2
+                    # mi_04271940 = 2
+                    # speed_penalty = (1. / last_response_latency) ** mi_04271940
+                    # logging.info(f"111111111111111111111111111111111111111111111111111111111 pingfang {speed_penalty} {last_response_latency}")
+                    # # 20230427 ###########################################################################
+
+                    mi_04271940 = 4
                     speed_penalty = (1. / last_response_latency) ** mi_04271940
                     logging.info(f"111111111111111111111111111111111111111111111111111111111 pingfang {speed_penalty} {last_response_latency}")
-                    # 20230427 ###########################################################################
+                    # 20230428 ###########################################################################
 
                     debug_dict[client_id].update({
                         "resp_lat": round(last_response_latency, 4),
